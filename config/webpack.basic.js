@@ -10,7 +10,7 @@ module.exports = {
     entry: util.getEntries(),
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, '../dist')
+        path: path.resolve(__dirname, '../dist/static')
     },
     module: {
         rules: [
@@ -29,13 +29,11 @@ module.exports = {
     plugins: [
         new extractTextPlugin({
             filename:  (getPath) => {
-                return getPath('style/[name].css').replace('css/js', 'css');
+                return getPath('../style/[name].css').replace('css/js', 'css');
             },
             allChunks: true
         }),
-        new htmlWebpackPlugin({
-
-        })
+        ...util.getHtmlPlugin()
     ],
     mode: 'development'
 };

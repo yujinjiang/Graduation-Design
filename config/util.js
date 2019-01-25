@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const webpackHtmlPlugin = require('html-webpack-plugin');
 
 function getTemplateNames() {
     return fs.readdirSync(path.resolve('../templates'));
@@ -7,18 +8,30 @@ function getTemplateNames() {
 
 function getEntries() {
     const entryNames = getTemplateNames();
-
-    return entryNames.map(name => {
+    const entries = {};
+    entryNames.map(name => {
         const slicedName = name.slice(0, name.lastIndexOf('.'));
-        return './entry/' + slicedName + '.js';
+        entries[slicedName] = './entry/' + slicedName + '.js'
+    });
+
+    return entries;
+}
+
+function getHtmlPlugin() {
+    const templateNames = getTemplateNames();
+    return templateNames.map(name => {
+        const slicedName = name.slice(0, name.lastIndexOf('.'));
+        return new webpackHtmlPlugin({
+            filename: '../views/' + slicedName + '.html',
+            template: './templates/' + slicedName + '.html',
+            inject: true,
+            minify: true,
+            chunks: [slicedName]
+        })
     });
 }
 
-function getTemplate() {
-    
-}
-
 module.exports = {
-    getTemplateNames,
-    getEntries
+    getEntries,
+    getHtmlPlugin
 };
