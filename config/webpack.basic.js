@@ -3,6 +3,7 @@ const fs = require('fs');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
+const openBrowser = require('open-browser-webpack-plugin');
 
 const util = require('./util');
 
@@ -60,7 +61,8 @@ module.exports = {
         ...util.getHtmlPlugin(),
         new cleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../')
-        })
+        }),
+        new openBrowser({ url: 'http://localhost:3000'})
     ],
     mode: 'development'
 };
