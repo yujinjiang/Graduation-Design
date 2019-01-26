@@ -2,8 +2,9 @@ const path = require('path');
 const fs = require('fs');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const cleanWebpackPlugin = require('clean-webpack-plugin');
+
 const util = require('./util');
-util.getEntries();
 
 module.exports = {
     context: path.resolve(__dirname, '../'),
@@ -33,7 +34,10 @@ module.exports = {
             },
             allChunks: true
         }),
-        ...util.getHtmlPlugin()
+        ...util.getHtmlPlugin(),
+        new cleanWebpackPlugin(['dist'], {
+            root: path.resolve(__dirname, '../')
+        })
     ],
     mode: 'development'
 };
