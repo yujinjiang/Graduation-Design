@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cd config && webpack --config webpack.basic.js"
+    "dev": "cd config && webpack --config webpack.basic.js && yarn server",
+    "server":  "cd server && node index"
   },
   "keywords": [],
   "author": "",
