@@ -1,9 +1,13 @@
 body {
+    height: 100%;
     background: blue url(../images/aboutUs/bg.jpg);
 }
-div {
-    background: green;
-    background-color: #666666;
-    background-color: #F3FbFe;
-    background-color: black;
+html {
+    font-size: 14px;
+    height: 100%;
+}
+.table,
+.table th,
+.table caption {
+    text-align: center;
 }

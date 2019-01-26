@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:router', (req, res, next) => {
-    const router = req.params.router;
+    const router = req.params.router.replace(/.html$/, '');
     res.sendFile(path.resolve('../dist/views/' + router + '.html'));
 });
 

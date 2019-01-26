@@ -26,6 +26,17 @@ module.exports = {
                 })
             },
             {
+                test: /\.html$/,
+                use: [ {
+                    loader: 'html-loader',
+                    options: {
+                        minimize: true,
+                        removeComments: false,
+                        collapseWhitespace: false
+                    }
+                }]
+            },
+            {
                 test: /\.(png|jpg|gif)$/,
                 use: [
                     {
