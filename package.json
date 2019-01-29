@@ -7,12 +7,20 @@
     "dev": "cd config && webpack --config webpack.basic.js && yarn server",
     "server": "cd server && node index"
   },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead",
+    "cover 99.5%"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.16.1",
     "@types/node": "^10.12.18",
+    "autoprefixer": "^9.4.7",
     "clean-webpack-plugin": "^1.0.1",
     "css-loader": "^2.1.0",
     "express": "^4.16.4",
@@ -24,6 +32,8 @@
     "node": "^11.6.0",
     "node-sass": "^4.11.0",
     "open-browser-webpack-plugin": "^0.0.5",
+    "postcss": "^7.0.14",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
