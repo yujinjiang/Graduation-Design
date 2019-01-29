@@ -4,6 +4,7 @@ const extractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
 const openBrowser = require('open-browser-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const util = require('./util');
 
@@ -13,6 +14,9 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, '../dist/static')
+    },
+    resolve: {
+        extensions: ['.js', '.vue', '.scss']
     },
     module: {
         rules: [
@@ -25,6 +29,10 @@ module.exports = {
                         'sass-loader'
                     ]
                 })
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             },
             {
                 test: /\.html$/,
@@ -62,7 +70,8 @@ module.exports = {
         new cleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../')
         }),
-        new openBrowser({ url: 'http://localhost:3000'})
+        new openBrowser({ url: 'http://localhost:3000'}),
+        new VueLoaderPlugin()
     ],
     mode: 'development'
 };
