@@ -22,7 +22,7 @@
     export default {
         data() {
             return {
-                message: "this is from Vue"
+                message: "this is from Vue, this is hot replace"
             };
         }
     }

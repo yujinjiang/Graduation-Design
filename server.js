@@ -1,5 +1,3 @@
-console.log()
-const process = require('process');
 const path = require("path");
 const express = require("express");
 const webpack = require("webpack");
@@ -23,7 +21,7 @@ let hotMiddleware = webpackHotMiddleware(complier,{
     heartbeat: 2000,
 });
 
-app.use(devMiddleware)
+app.use(devMiddleware);
 app.use(hotMiddleware);
 app.use(express.static(DIST_DIR));
 
