@@ -22,8 +22,11 @@
     export default {
         data() {
             return {
-                message: "this is from Vue, this is hot replace"
+                message: "this is from Vue this is hot replace"
             };
+        },
+        mounted() {
+            console.log('vue reload agent');
         }
     }
 </script>
