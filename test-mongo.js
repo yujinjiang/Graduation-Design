@@ -1,31 +1,29 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/gr";
 
-MongoClient.connect(
-    url,
-    {
-        useNewUrlParser: true
-    },
-    function (err, db) {
-        if (err) {
-            console.log(err);
-            return;
-        }
 
+let database;
+MongoClient
+    .connect(
+        url,
+        {
+            useNewUrlParser: true
+        })
+    .then(db => {
+        database = db;
         const grDataBase = db.db('gr');
-        grDataBase
-            .collection('yjj')
-            .insertOne(
-                {
-                    age: 24
-                },
-                err => {
-                    if (err) {
-                        console.log(err);
-                    }
 
-                    console.log('insert ok');
-                    db.close();
-                }
-            );
+        return grDataBase
+            .collection('yjj')
+            .insertOne({
+                engName: 'jjy'
+            });
+    })
+    .then(res => {
+        database.close();
+        console.log('insert ok');
+    })
+    .catch(err => {
+        database.close();
+        console.log(err);
     });
