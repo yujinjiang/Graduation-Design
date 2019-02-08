@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9a25e23-c92e-4e4e-a8f2-fcf4c3978d4a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/test-mongo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue/goodList/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue/goodList/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -18,15 +20,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue/introduction/introduction.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/goodList.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,11 +41,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/goodList/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="391">
+              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test-mongo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -60,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vue/aboutUs/app.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
+            <state relative-caret-position="253">
               <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
             </state>
           </provider>
@@ -134,6 +136,7 @@
         <option value="$PROJECT_DIR$/templates/goodList.html" />
         <option value="$PROJECT_DIR$/entry/goodList.js" />
         <option value="$PROJECT_DIR$/vue/goodList/index.vue" />
+        <option value="$PROJECT_DIR$/test-mongo.js" />
       </list>
     </option>
   </component>
@@ -149,7 +152,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,15 +159,11 @@
               <item name="Graduation-Design" type="b2602c69:ProjectViewProjectNode" />
               <item name="Graduation-Design" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Graduation-Design" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Graduation-Design" type="462c0819:PsiDirectoryNode" />
-              <item name="plan-week" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,14 +174,15 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/plan-week" />
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="C:\Users\Administrator\Desktop\graduate-design\images\aboutUs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\gr\graduate-design" />
       <recent name="C:\Users\Administrator\Desktop\gr\graduate-design\config" />
       <recent name="C:\Users\Administrator\Desktop\gr\graduate-design\style" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/config" />
-      <recent name="C:\Users\Administrator\Desktop\graduate-design\images\aboutUs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -220,15 +219,18 @@
       <workItem from="1548994367938" duration="2557000" />
       <workItem from="1549026145830" duration="3172000" />
       <workItem from="1549074867764" duration="2260000" />
-      <workItem from="1549163641985" duration="1312000" />
+      <workItem from="1549163641985" duration="1598000" />
+      <workItem from="1549529867719" duration="834000" />
+      <workItem from="1549625698083" duration="3210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65937000" />
+    <option name="totallyTimeSpent" value="70267000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1373" height="875" extended-state="7" />
+    <frame x="67" y="25" width="1373" height="875" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16679022" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -253,9 +255,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/images/aboutUs/bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/static/images/b8de8fe8f787690b6ddd2df9a5898002.jpg" />
     <entry file="file://$PROJECT_DIR$/dist/style/aboutUs.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -496,6 +495,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vue/aboutUs/app.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/entry/aboutUs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -527,17 +533,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/aboutUs/app.vue">
+    <entry file="file://$PROJECT_DIR$/vue/goodList/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        <state relative-caret-position="391">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue/goodList/index.vue">
+    <entry file="file://$PROJECT_DIR$/test-mongo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="532">
+          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
         </state>
       </provider>
     </entry>
