@@ -3,10 +3,20 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     resolve: {
-        extensions: ['.js', '.vue', '.scss']
+        extensions: ['.js', '.vue', '.scss', '.jsx']
     },
     module: {
         rules: [
+            {
+                test: /\.jsx|js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
+                }
+            },
             {
                 test: /\.scss$/,
                 use:
