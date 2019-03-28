@@ -1,6 +1,5 @@
-import '../style/aboutUs.scss';
 import '../style/reset.scss';
 import Vue from 'vue';
-import app from '../vue/aboutUs/app';
+import app from '../vue/DatePicker';
 
 (new Vue(app)).$mount('#app');

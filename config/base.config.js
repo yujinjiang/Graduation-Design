@@ -1,20 +1,7 @@
-const path = require('path');
-const fs = require('fs');
-const extractTextPlugin = require('extract-text-webpack-plugin');
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const cleanWebpackPlugin = require('clean-webpack-plugin');
 const openBrowser = require('open-browser-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-const util = require('./util');
-
 module.exports = {
-    context: path.resolve(__dirname, '../'),
-    entry: util.getEntries(),
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, '../dist/static')
-    },
     resolve: {
         extensions: ['.js', '.vue', '.scss']
     },
@@ -22,31 +9,32 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: extractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: [
+                use:
+                    [
+                        'style-loader',
                         {
                             loader: 'css-loader',
                             options: {
                                 importLoaders: 1,
                             }
                         },
-
                         {
                             loader: 'postcss-loader',
                             options: {
                                 config: {
-                                    path: '../'
+                                    path: './'
                                 }
                             }
                         },
                         'sass-loader'
                     ]
-                })
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    hotReload: false // 打開热重载
+                }
             },
             {
                 test: /\.html$/,
@@ -74,18 +62,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new extractTextPlugin({
-            filename:  (getPath) => {
-                return getPath('../style/[name].css').replace('css/js', 'css');
-            },
-            allChunks: true
-        }),
-        ...util.getHtmlPlugin(),
-        new cleanWebpackPlugin(['dist'], {
-            root: path.resolve(__dirname, '../')
-        }),
-        new openBrowser({ url: 'http://localhost:3000'}),
+        new openBrowser({ url: 'http://localhost:9090'}),
         new VueLoaderPlugin()
-    ],
-    mode: 'development'
+    ]
 };
