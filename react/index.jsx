@@ -2,6 +2,10 @@ import React from 'react';
 import GreetIng from './components/greeting';
 import TestList from './components/list';
 import Form from './components/form';
+import Confirm  from './components/conform';
+import SayName from './components/SayName';
+import DefaultProps from './components/defaultProps';
+import TestRefs from './components/TestRef';
 
 export default class Text extends React.PureComponent {
 
@@ -41,6 +45,13 @@ export default class Text extends React.PureComponent {
             onChange: this.onChange
         };
 
+        const confirmProps = {
+            title: 'hello confirm',
+            content: 'hello content',
+            cancelText: 'hello cancel',
+            ensureText: 'ensure'
+        };
+
         return (
             <div>
                 {this.state.mes}
@@ -52,6 +63,10 @@ export default class Text extends React.PureComponent {
                 </GreetIng>
                 <TestList {...listProps} />
                 <Form {...formProps} />
+                <Confirm {...confirmProps} />
+                <SayName />
+                <DefaultProps />
+                <TestRefs />
             </div>
         );
     }
