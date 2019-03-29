@@ -14,7 +14,6 @@ export default class extends Mixin {
 
     componentDidMount() {
         // mixin hooks
-        console.log(super.valueOf(), 12312312);
         super.componentDidMount();
     }
 

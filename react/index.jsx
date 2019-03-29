@@ -6,6 +6,11 @@ import Confirm  from './components/conform';
 import SayName from './components/SayName';
 import DefaultProps from './components/defaultProps';
 import TestRefs from './components/TestRef';
+import TestContext from './components/testContext';
+
+import {
+    Provider
+} from './components/provide';
 
 export default class Text extends React.PureComponent {
 
@@ -52,8 +57,13 @@ export default class Text extends React.PureComponent {
             ensureText: 'ensure'
         };
 
+        const provideData = {
+            month: 3,
+            year: 2019
+        };
+
         return (
-            <div>
+            <Provider value={provideData}>
                 {this.state.mes}
                 {this.state.num}
                 <GreetIng {...greetingProps}>
@@ -67,7 +77,8 @@ export default class Text extends React.PureComponent {
                 <SayName />
                 <DefaultProps />
                 <TestRefs />
-            </div>
+                <TestContext />
+            </Provider>
         );
     }
 }
