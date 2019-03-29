@@ -9,13 +9,13 @@ export default class GreetIng extends React.PureComponent {
         test: 1123
     };
 
-    handleClick = () => {
-        console.log(this.props);
+    handleClick = e => {
+        console.log(e);
     };
 
     render() {
         return (
-            <div onClick={this.handleClick}>
+            <div onClick={e =>  this.handleClick(e)}>
                 {this.props.children}
                 {this.state.test}
             </div>
