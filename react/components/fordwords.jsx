@@ -5,10 +5,6 @@ export default class SayYes extends React.PureComponent {
 
     divDOM = React.createRef();
 
-    componentDidMount() {
-        console.log(this.divDOM.current);
-    }
-
     render() {
         const word = this.props.language  === 'en' ? 'hello' : '你好';
         return (
@@ -37,9 +33,18 @@ function registerLanguage(component) {
             });
         };
 
+        componentDidMount() {
+            console.log(this.$refs);
+        }
+
         render() {
+            const {
+                forwardedRef,
+                ...rest
+            } = this.props;
+
             const Component = component;
-            return <Component {...this.state} toggleLanguage={this.toggleLanguage} />;
+            return <Component {...this.state} toggleLanguage={this.toggleLanguage} {...rest} ref={forwardedRef} />;
         }
     }
 }

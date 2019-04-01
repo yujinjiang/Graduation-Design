@@ -12,6 +12,7 @@ import CatahError from './components/CatchError';
 import EmitError from './components/EmitError';
 import WebComponent from './components/webComponent';
 import SayYes from './components/High';
+import TestFordwords from './components/fordwords';
 
 import {
     Provider
@@ -94,6 +95,7 @@ export default class Text extends React.PureComponent {
                 </CatahError>
                 <WebComponent></WebComponent>
                 <SayYes />
+                <TestFordwords />
             </Provider>
         );
     }
