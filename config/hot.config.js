@@ -18,7 +18,8 @@ module.exports = webpackMerge(baseConfig, {
     //输出的文件名 合并以后的js会命名为bundle.js
     output: {
         path: BUILD_PATH,
-        filename: 'bundle.js'//将app文件夹中的两个js文件合并成build目录下的bundle.js文件
+        filename: 'bundle.js', //将app文件夹中的两个js文件合并成build目录下的bundle.js文件
+        publicPath: '/',
     },
     mode: 'development',
     devtool: 'source-map',

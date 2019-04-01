@@ -16,10 +16,24 @@ module.exports = {
         path: path.resolve(__dirname, '../dist/static')
     },
     resolve: {
-        extensions: ['.js', '.vue', '.scss']
+        extensions: ['.js', '.vue', '.scss', '.jsx']
     },
     module: {
         rules: [
+            {
+                test: /\.jsx|js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react'],
+                        plugins: [
+                            ["@babel/plugin-proposal-decorators", {legacy: true }],
+                            ['@babel/plugin-proposal-class-properties', {loose: true}]
+                        ]
+                    }
+                }
+            },
             {
                 test: /\.scss$/,
                 use: extractTextPlugin.extract({
@@ -87,5 +101,5 @@ module.exports = {
         new openBrowser({ url: 'http://localhost:3000'}),
         new VueLoaderPlugin()
     ],
-    mode: 'development'
+    mode: 'production'
 };

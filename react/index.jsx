@@ -10,6 +10,8 @@ import TestContext from './components/testContext';
 import Alert from './components/Portals';
 import CatahError from './components/CatchError';
 import EmitError from './components/EmitError';
+import WebComponent from './components/webComponent';
+import SayYes from './components/High';
 
 import {
     Provider
@@ -90,6 +92,8 @@ export default class Text extends React.PureComponent {
                 <CatahError>
                     <EmitError />
                 </CatahError>
+                <WebComponent></WebComponent>
+                <SayYes />
             </Provider>
         );
     }
