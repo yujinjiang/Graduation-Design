@@ -13,18 +13,26 @@ import EmitError from './components/EmitError';
 import WebComponent from './components/webComponent';
 import SayYes from './components/High';
 import TestFordwords from './components/fordwords';
+import RenderProps from './components/renderProps';
+
+import {
+    GetText,
+    ComputedGetText
+} from './components/memo';
 
 import {
     Provider
 } from './components/provide';
 
-export default class Text extends React.PureComponent {
+export default class Text extends React.Component {
 
     state = {
         mes: 'hello world',
         num: 1,
         age: '',
-        name: ''
+        name: '',
+
+        text: 'hello memo'
     };
 
     onChange = (e, type) => {
@@ -34,8 +42,14 @@ export default class Text extends React.PureComponent {
         this.setState(changeStates);
     };
 
+    changeText = () => {
+        console.log(12312);
+        this.setState({
+            text: 'hello memo'
+        });
+    };
+
     componentDidMount() {
-        console.log('mount');
     }
 
     render() {
@@ -73,6 +87,23 @@ export default class Text extends React.PureComponent {
             content: 'content'
         };
 
+        const renderProps = {
+            list: [1, 2, 3, 4],
+            render() {
+                return (
+                    <ul>
+                        {
+                            this.list.map(item => <li key={item}>{item}</li>)
+                        }
+                    </ul>
+                );
+            }
+        };
+
+        const testMemoProps = {
+            text: this.state.text
+        };
+
         return (
             <Provider value={provideData}>
                 {this.state.mes}
@@ -93,9 +124,13 @@ export default class Text extends React.PureComponent {
                 <CatahError>
                     <EmitError />
                 </CatahError>
-                <WebComponent></WebComponent>
+                <WebComponent />
                 <SayYes />
                 <TestFordwords />
+                <RenderProps {...renderProps} />
+                <GetText {...testMemoProps} />
+                <ComputedGetText {...testMemoProps} />
+                <div onClick={this.changeText}>change mome</div>
             </Provider>
         );
     }
