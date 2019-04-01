@@ -7,6 +7,9 @@ import SayName from './components/SayName';
 import DefaultProps from './components/defaultProps';
 import TestRefs from './components/TestRef';
 import TestContext from './components/testContext';
+import Alert from './components/Portals';
+import CatahError from './components/CatchError';
+import EmitError from './components/EmitError';
 
 import {
     Provider
@@ -62,6 +65,11 @@ export default class Text extends React.PureComponent {
             year: 2019
         };
 
+        const alertProps = {
+            title: 'title',
+            content: 'content'
+        };
+
         return (
             <Provider value={provideData}>
                 {this.state.mes}
@@ -78,6 +86,10 @@ export default class Text extends React.PureComponent {
                 <DefaultProps />
                 <TestRefs />
                 <TestContext />
+                <Alert {...alertProps} />
+                <CatahError>
+                    <EmitError />
+                </CatahError>
             </Provider>
         );
     }
