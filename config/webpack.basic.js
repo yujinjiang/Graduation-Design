@@ -111,7 +111,7 @@ module.exports = {
         new cleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../')
         }),
-        new openBrowser({ url: 'http://localhost:3000'}),
+        new openBrowser({ url: 'http://localhost:3001'}),
         new VueLoaderPlugin()
     ],
     mode: 'production'

@@ -45,7 +45,7 @@ compiler.watch({
 });
 
 (async () => {
-    const port  = await getPort({port: 3000});
+    const port  = await getPort({port: 3001});
     console.log(port);
     app.listen(port);
 })();
