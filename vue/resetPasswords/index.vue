@@ -7,9 +7,6 @@
             <FormItem label="邮箱" prop="mail">
                 <Input v-model="formValidate.mail" placeholder="Enter your password"></Input>
             </FormItem>
-            <FormItem label="手机号" prop="phone">
-                <Input v-model="formValidate.phone" placeholder="Enter your phone number"></Input>
-            </FormItem>
             <FormItem label="密码" prop="password">
                 <Input v-model="formValidate.password" placeholder="Enter your password"></Input>
             </FormItem>
@@ -30,17 +27,11 @@
                     name: '',
                     mail: '',
                     password: '',
-                    repeatPassword: '',
-                    phone: ''
+                    repeatPassword: ''
                 },
                 ruleValidate: {
                     name: [
                         {required: true, message: 'The account cannot be empty', trigger: 'blur'}
-                    ],
-                    phone: [
-                        {
-                            required: true, message: 'The phone cannot be empty',trigger: 'blur'
-                        }
                     ],
                     mail: [
                         {required: true, message: 'Mailbox cannot be empty', trigger: 'blur'},
