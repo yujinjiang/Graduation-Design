@@ -1,7 +1,7 @@
 {
   "name": "graduate-design",
   "version": "1.0.0",
-  "description": "",
+  "description": "于锦江--毕业设计",
   "main": "index.js",
   "scripts": {
     "dev": "cd config && webpack --config webpack.basic.js && yarn server",

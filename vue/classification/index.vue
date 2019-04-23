@@ -11,8 +11,11 @@
                     <Option v-for="item in cityList2" :value="item.value" :key="item.value">{{ item.label }}</Option>
                 </Select>
             </FormItem>
+            <FormItem label="书籍名称" prop="intro">
+                <Input v-model="formValidate.name" placeholder="Enter your book name"></Input>
+            </FormItem>
             <FormItem label="书籍介绍" prop="intro">
-                <Input v-model="formValidate.phone" placeholder="Enter your phone number"></Input>
+                <Input v-model="formValidate.phone" placeholder="Enter your book intro"></Input>
             </FormItem>
             <FormItem label="书籍图片">
                 <div class="demo-upload-list" v-for="item in uploadList">
@@ -99,7 +102,8 @@
                     name: '',
                     mail: '',
                     phone: '',
-                    radio: ''
+                    radio: '',
+                    name: ''
                 },
                 ruleValidate: {
                     name: [

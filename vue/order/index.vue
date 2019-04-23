@@ -4,10 +4,14 @@
             <Panel name="1">
                 我的订单
                 <Card slot="content">
-                    <p slot="title">
-                        <Icon type="md-alarm" />
-                        正在发货
-                    </p>
+                    <div slot="title" class="sign-in-step">
+                        <Steps :current="1">
+                            <Step title="待发货" content="已经通知快递公司取货"></Step>
+                            <Step title="已发货" content="快递公司已经发剧哦"></Step>
+                            <Step title="待收货" content="快递已经到达取货地点"></Step>
+                            <Step title="待评价" content="已经取货待评价"></Step>
+                        </Steps>
+                    </div>
                     <a href="#" slot="extra">
                         查看详情
                     </a>
@@ -64,5 +68,9 @@
         border: 1px solid #ccc;
         border-radius: 10px;
         box-shadow: 0 0 10px #333;
+
+        &-step {
+            height: 40px;
+        }
     }
 </style>

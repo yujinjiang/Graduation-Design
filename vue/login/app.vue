@@ -1,11 +1,13 @@
 <template>
     <section class="sign-in">
         <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80">
-            <FormItem label="账号" prop="name">
-                <Input v-model="formValidate.name" placeholder="Enter your account"></Input>
+            <FormItem label="邮箱" prop="name">
+                <Input v-model="formValidate.name"
+                       search enter-button="发送验证码"
+                       placeholder="Enter your email"></Input>
             </FormItem>
-            <FormItem label="密码" prop="password">
-                <Input v-model="formValidate.password" placeholder="Enter your password"></Input>
+            <FormItem label="验证码" prop="password">
+                <Input v-model="formValidate.password" placeholder="Enter your code"></Input>
             </FormItem>
             <FormItem>
                 <Button @click="handleSubmit('formValidate')">确认</Button>
@@ -23,10 +25,10 @@
                 },
                 ruleValidate: {
                     name: [
-                        { required: true, message: 'The name cannot be empty', trigger: 'blur' }
+                        { required: true, message: 'The email cannot be empty', trigger: 'blur' }
                     ],
                     password: [
-                        { required: true, message: 'password cannot be empty', trigger: 'blur' }
+                        { required: true, message: 'code cannot be empty', trigger: 'blur' }
                     ]
                 }
             }
